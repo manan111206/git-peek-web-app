@@ -11,7 +11,7 @@ sequenceDiagram
     autonumber
     actor Client as Client App (React)
     participant Server as Backend API (Express)
-    database DB as Cache DB (MongoDB)
+    participant DB as Cache DB (MongoDB)
     participant GitHub as GitHub API
 
     Client->>Server: GET /api/github/:username
