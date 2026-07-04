@@ -1,0 +1,77 @@
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px !important;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-md);
+  background-color: var(--border-color);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Colors Theme custom classes */
+.blue .icon { color: #3b82f6; }
+.blue .iconWrapper { background-color: rgba(59, 130, 246, 0.1); }
+
+.violet .icon { color: #8b5cf6; }
+.violet .iconWrapper { background-color: rgba(139, 92, 246, 0.1); }
+
+.teal .icon { color: #10b981; }
+.teal .iconWrapper { background-color: rgba(16, 185, 129, 0.1); }
+
+.coral .icon { color: #f97316; }
+.coral .iconWrapper { background-color: rgba(249, 115, 22, 0.1); }

@@ -1,0 +1,136 @@
+.profileContainer {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.centerContainer {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.backRow {
+  margin-bottom: 24px;
+}
+
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+  .dashboardLayout {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* Repos Section */
+.reposSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reposHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+@media (min-width: 576px) {
+  .reposHeader {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.repoCountBadge {
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.filterControls {
+  margin-bottom: 8px;
+}
+
+.reposListContainer {
+  position: relative;
+  min-height: 200px;
+}
+
+.refreshOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 13, 22, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Skeletons Layouts */
+.skeletonStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .skeletonStatsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skeletonFilterRow {
+  height: 48px;
+  width: 100%;
+  background-color: var(--border-color);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}

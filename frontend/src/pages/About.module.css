@@ -1,0 +1,206 @@
+.aboutContainer {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.8px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Explainer Card */
+.explainerCard {
+  padding: 32px !important;
+}
+
+.explainerLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .explainerLayout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-md);
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.explainerIcon {
+  font-size: 1.8rem;
+}
+
+.explainerText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.explainerTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.explainerDesc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Stack Section */
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .stackGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.techCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 200px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.techIcon {
+  font-size: 2.2rem;
+}
+
+.techTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.techDesc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Architecture Flow */
+.flowCard {
+  padding: 30px !important;
+}
+
+.flowGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 992px) {
+  .flowGrid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.flowStep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.stepNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.stepTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stepDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.flowArrow {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  align-self: center;
+}
+
+@media (max-width: 992px) {
+  .flowArrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+}

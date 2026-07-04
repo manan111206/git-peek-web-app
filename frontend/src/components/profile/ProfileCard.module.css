@@ -1,0 +1,194 @@
+.profileCard {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.hireableBadge {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.nameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.favBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.favBtn:hover {
+  transform: scale(1.15);
+}
+
+.heartFilled {
+  color: var(--danger-color);
+}
+
+.heartOutline {
+  color: var(--text-muted);
+}
+
+.heartOutline:hover {
+  color: var(--danger-color);
+}
+
+.username {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 2px;
+  width: fit-content;
+}
+
+.username:hover {
+  text-decoration: underline;
+}
+
+.joinedRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.calendarIcon {
+  font-size: 0.9rem;
+}
+
+.sourceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+}
+
+.lastFetchedText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.bioContainer {
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bio {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.detailIcon {
+  font-size: 1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.detailText {
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link {
+  color: var(--accent-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.githubBtnLink {
+  width: 100%;
+}
+
+.fullWidthBtn {
+  width: 100%;
+}
+
+.refreshBtn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
