@@ -19,6 +19,7 @@ Key routes include:
 - `/` - The landing page and search form.
 - `/about` - Information about GitPeek.
 - `/profile/:username` - The dynamic profile overview for a specific GitHub user.
+- `/repo/:owner/:repo` - The detailed view for a specific repository, including AI summaries and PDF exports.
 
 ## Styling Strategy: CSS Modules
 

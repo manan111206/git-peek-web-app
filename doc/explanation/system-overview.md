@@ -1,8 +1,8 @@
 # System Overview
 
-GitPeek is designed as a full-stack, decoupled monorepo application. Its primary goal is to provide a seamless, aesthetically pleasing interface for exploring GitHub user data without running into the strict unauthenticated rate limits imposed by the public GitHub REST API.
+GitPeek is designed as a full-stack, decoupled monorepo application. Its primary goal is to provide a seamless, aesthetically pleasing interface for exploring GitHub user data, comparing profiles, and generating AI-powered insights.
 
-## Architecture Architecture
+## Architecture
 
 The project is split into two primary domains:
 
@@ -12,23 +12,57 @@ The project is split into two primary domains:
 ### The Frontend Client
 The user interface is a Single Page Application (SPA) built with **React**, bootstrapped via **Vite**. It handles all client-side routing, state management, and user interactions.
 
-- **Data Fetching:** The frontend does *not* talk to the GitHub API directly. Instead, it sends HTTP requests to our local backend server.
-- **State Management:** Handled largely via React Context (e.g., `SearchContext`) and local component state.
+- **Data Fetching:** The frontend requests data directly from our local backend server rather than hitting GitHub APIs.
+- **State Management:** Handled largely via React Context (e.g., `SearchContext`, `AuthContext`) and local component state.
 - **Styling:** CSS Modules are used strictly alongside a set of global CSS tokens to ensure a pristine, encapsulated dark theme.
 
 ### The Backend Proxy
-The backend is a lightweight Node.js application built with **Express**. Its primary responsibility is to securely proxy requests from the frontend client to the official GitHub API.
+The backend is a lightweight Node.js application built with **Express**. Its primary responsibility is to securely proxy requests, handle OAuth, and interact with third-party APIs like OpenRouter.
 
-- **Rate Limit Management:** By injecting a server-side Personal Access Token (PAT) into the proxied requests, the backend bypasses the severe 60-requests-per-hour limit for unauthenticated users, raising it to 5,000 requests per hour.
-- **Data Forwarding:** The backend performs minimal transformation of the data; it primarily acts as a secure middleware layer.
+- **Rate Limit Management:** By injecting a server-side Personal Access Token (PAT) or the user's OAuth token into the proxied requests, the backend bypasses strict unauthenticated rate limits.
+- **AI Integration:** Acts as the secure middleware for communicating with the OpenRouter LLM API.
+- **PDF Generation:** Handles the generation and streaming of PDF reports.
 
-## The Data Flow
+## High-Level Architecture Flow
 
-1. **User Action:** A user types `torvalds` into the search bar and hits Enter.
-2. **Client Request:** The React application makes an API call to `http://localhost:5000/api/users/torvalds`.
-3. **Server Proxy:** The Express backend receives the request, attaches the `GITHUB_TOKEN` to the headers, and forwards the request to `https://api.github.com/users/torvalds`.
-4. **GitHub Response:** GitHub returns the JSON profile data to the Express server.
-5. **Client Response:** The Express server relays the exact JSON back to the React frontend.
-6. **UI Update:** React updates the DOM to display the fetched profile data.
+```mermaid
+graph TD
+    Client[React Frontend] <--> |REST API| Server[Express Backend]
+    
+    subgraph Server Responsibilities
+    Server -->|OAuth & Data| GitHub[GitHub API]
+    Server -->|Generate Summaries| OpenRouter[OpenRouter API]
+    Server -->|Export| PDFEngine[PDF Generator]
+    end
+```
 
-By isolating the GitHub API communication in the backend, GitPeek ensures that authentication tokens remain secure and cannot be scraped from the frontend application bundle.
+## Authentication and Profile Comparison Flow
+
+GitPeek introduces the ability to compare your authenticated GitHub profile against other developers to gain AI-powered mentorship insights.
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Frontend
+    participant Backend
+    participant GitHub
+    participant OpenRouter
+    
+    User->>Frontend: Click "Sign in with GitHub"
+    Frontend->>Backend: Redirect to OAuth Route
+    Backend->>GitHub: Request Authorization
+    GitHub-->>Backend: Return Access Token
+    Backend-->>Frontend: Authenticated Session Established
+    
+    User->>Frontend: Navigate to another User Profile
+    Frontend->>Backend: Fetch Target Profile
+    Backend->>GitHub: Fetch Target Data
+    GitHub-->>Backend: Target Data
+    Backend-->>Frontend: Display Target Data
+    
+    User->>Frontend: Click "Compare with Me"
+    Frontend->>Backend: Request Comparison & AI Insights
+    Backend->>OpenRouter: Send Profile Data for Mentorship Analysis
+    OpenRouter-->>Backend: Return Learning Path & Recommendations
+    Backend-->>Frontend: Display AI Mentorship Insights
+```

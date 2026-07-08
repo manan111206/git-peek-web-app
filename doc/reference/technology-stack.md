@@ -19,12 +19,15 @@ The backend is a lightweight Node.js proxy server.
 - **Runtime:** [Node.js](https://nodejs.org/) - JavaScript runtime environment.
 - **Framework:** [Express.js](https://expressjs.com/) - Fast, unopinionated, minimalist web framework.
 - **HTTP Client:** [Axios](https://axios-http.com/) - Promise-based HTTP client used to interface with the GitHub API.
+- **Authentication:** [Passport.js](http://www.passportjs.org/) - Authentication middleware for Node.js (handling GitHub OAuth).
+- **PDF Generation:** [Puppeteer](https://pptr.dev/) or [PDFKit](https://pdfkit.org/) - For rendering and exporting AI repository summaries as PDFs.
 - **Middleware:**
   - `cors`: Handles Cross-Origin Resource Sharing.
-  - `dotenv`: Loads environment variables (like `GITHUB_TOKEN`) from a `.env` file.
+  - `dotenv`: Loads environment variables from a `.env` file.
 
 ## External APIs
 
 - **[GitHub REST API (v3)](https://docs.github.com/en/rest)**
-  - `/users/:username`: For profile metadata.
-  - `/users/:username/repos`: For public repository listings.
+  - Core endpoints for profile metadata and repository queries.
+- **[OpenRouter API](https://openrouter.ai/)**
+  - Advanced LLM integration for processing repository codebases, generating summaries, and providing AI mentorship recommendations.
