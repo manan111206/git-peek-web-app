@@ -34,9 +34,9 @@ export const About = () => {
     <Container className={`${styles.aboutContainer} animate-fade-in`}>
       {/* Title Header */}
       <section className={styles.header}>
-        <h1 className={styles.title}>About GitShield Explorer</h1>
+        <h1 className={styles.title}>About GitPeek</h1>
         <p className={styles.subtitle}>
-          GitShield Explorer is a professional developer dashboard and full-stack API integration designed to explore GitHub metrics while optimizing API request budgets.
+          GitPeek is a professional developer dashboard and full-stack API integration designed to explore GitHub metrics while optimizing API request budgets.
         </p>
       </section>
 
@@ -49,7 +49,7 @@ export const About = () => {
           <div className={styles.explainerText}>
             <h2 className={styles.explainerTitle}>24-Hour Caching Strategy</h2>
             <p className={styles.explainerDesc}>
-              The GitHub REST API caps unauthenticated users at 60 requests per hour. GitShield intercepts search requests and queries a local MongoDB database first. If profile cache is younger than 24 hours, data is returned instantly. If stale or missing, the backend fetches updates from GitHub, updates MongoDB, and refreshes the cache dynamically.
+              The GitHub REST API caps unauthenticated users at 60 requests per hour. GitPeek intercepts search requests and queries a local MongoDB database first. If profile cache is younger than 24 hours, data is returned instantly. If stale or missing, the backend fetches updates from GitHub, updates MongoDB, and refreshes the cache dynamically.
             </p>
             <div className={styles.badgeRow}>
               <Badge variant="primary" size="md">Fast Load Times</Badge>

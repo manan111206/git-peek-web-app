@@ -1,5 +1,5 @@
 {
-  "name": "github-explorer-server",
+  "name": "gitpeek-server",
   "version": "1.0.0",
   "description": "Backend API for GitHub Explorer, caching profiles in MongoDB",
   "main": "server.js",

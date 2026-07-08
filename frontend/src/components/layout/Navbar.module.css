@@ -76,37 +76,6 @@
   font-size: 1.05rem;
 }
 
-.themeToggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--border-color);
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.themeToggle:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-
-.sunIcon {
-  color: var(--warning-color);
-  font-size: 1.2rem;
-}
-
-.moonIcon {
-  color: var(--accent-color);
-  font-size: 1.2rem;
-}
-
 @media (max-width: 576px) {
   .nav {
     gap: 12px;

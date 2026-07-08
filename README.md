@@ -1,6 +1,6 @@
-# GitShield Explorer
+# GitPeek
 
-GitShield Explorer is a full-stack developer dashboard application for exploring GitHub profiles, statistics, and repositories. Built with React, Node.js, Express, and MongoDB, it implements a 24-hour cache synchronization layer to improve page load performance and bypass GitHub API rate limiting controls.
+GitPeek is a full-stack developer dashboard application for exploring GitHub profiles, statistics, and repositories. Built with React, Node.js, Express, and MongoDB, it implements a 24-hour cache synchronization layer to improve page load performance and bypass GitHub API rate limiting controls.
 
 ## System Architecture
 

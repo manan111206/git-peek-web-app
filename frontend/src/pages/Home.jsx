@@ -76,7 +76,7 @@ export const Home = () => {
           <FaDatabase /> Powered by Express & MongoDB Caching
         </div>
         <h1 className={styles.heroTitle}>
-          Git<span className={styles.titleGradient}>Shield</span> Explorer
+          GitPeek
         </h1>
         <p className={styles.heroSubtitle}>
           Look up GitHub developer profiles, statistics, and repositories. Cache profile states locally on a 24-hour cycle to improve performance and bypass API limits.

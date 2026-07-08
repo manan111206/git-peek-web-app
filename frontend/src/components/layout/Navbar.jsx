@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
-import { FaGithub, FaSun, FaMoon, FaInfoCircle, FaHome } from 'react-icons/fa';
+import { FaGithub, FaInfoCircle, FaHome } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 import Container from './Container';
 
 export const Navbar = () => {
-  const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -16,7 +14,7 @@ export const Navbar = () => {
       <Container className={styles.navContainer}>
         <Link to="/" className={styles.logo}>
           <FaGithub className={styles.logoIcon} />
-          <span>Git<span className={styles.logoAccent}>Shield</span></span>
+          <span>Git<span className={styles.logoAccent}>Peek</span></span>
         </Link>
         
         <nav className={styles.nav}>
@@ -35,13 +33,6 @@ export const Navbar = () => {
             <span>About</span>
           </Link>
           
-          <button 
-            onClick={toggleTheme} 
-            className={styles.themeToggle}
-            aria-label="Toggle Theme"
-          >
-            {isDark ? <FaSun className={styles.sunIcon} /> : <FaMoon className={styles.moonIcon} />}
-          </button>
         </nav>
       </Container>
     </header>
